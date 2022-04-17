@@ -2,7 +2,7 @@ package Java101.Basics;
 
 import java.util.Scanner;
 
-public class GPACalculator {
+public class CalculateGPA {
     public static void main(String[] args) {
 
         int math, physics, chemistry, turkish, history, music;
