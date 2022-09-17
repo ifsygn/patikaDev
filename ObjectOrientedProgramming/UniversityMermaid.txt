@@ -1,0 +1,39 @@
+classDiagram
+direction TB
+class Department {
+	
+}
+class University {
+	
+}
+class Office {
+	
+}
+class Classroom {
+	
+}
+class Worker {
+	
+}
+class Instructor {
+	
+}
+class Officer {
+	
+}
+class Student {
+	idCard : String
+	study() bool
+}
+class IdCard {
+	
+}
+ 
+Department "1..n"  -- "1..n" Office
+Office "1..n"  -- "1..n" Worker
+University "1"  -- "1..n" Classroom : has a
+Worker <|-- Instructor
+Worker <|-- Officer
+University "1"  -- "1..n" Department
+Worker <|-- Student
+Student -- IdCard
