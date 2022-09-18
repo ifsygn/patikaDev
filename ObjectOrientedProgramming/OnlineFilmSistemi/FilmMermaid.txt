@@ -1,0 +1,22 @@
+classDiagram
+direction 
+class Films {
+	sortFilms() array
+	status : String
+}
+class Users {
+	subscribe() bool
+	buyCredit()
+	userType : String
+	rentFilm()
+	payCredit()
+	amountOfCredit() float
+	buyFilm()
+}
+class Websites {
+	
+}
+ 
+Websites "1"  --o  "*" Users
+Websites "1"  --o  "*" Films
+Users -- Films

@@ -1,0 +1,64 @@
+classDiagram
+direction TB
+class Animals {
+<<abstract>>
+	name : String
+	weight : int
+	age : int
+	getDosage() int
+	getFeedSchedule() String
+}
+class Horses {
+<<abstract>>
+	getDosage() int
+	getFeedSchedule() String
+}
+class Zebra {
+	getDosage() int
+	getFeedSchedule() String
+}
+class Donkey {
+	getDosage() int
+	getFeedSchedule() String
+}
+class Cats {
+<<abstract>>
+	getDosage() int
+	getFeedSchedule() String
+}
+class Tiger {
+	getDosage() int
+	getFeedSchedule() String
+}
+class Leon {
+	getDosage() int
+	getFeedSchedule() String
+}
+class Rodents {
+<<abstract>>
+	getDosage() int
+	getFeedSchedule() String
+}
+class Rat {
+	getDosage() int
+	getFeedSchedule() String
+}
+class Beaver {
+	getDosage() int
+	getFeedSchedule() String
+}
+class Horse {
+	getDosage() int
+	getFeedSchedule() String
+}
+ 
+Animals <|-- Horses
+Animals <|-- Rodents
+Animals <|-- Cats
+Horses <|-- Zebra
+Horses <|-- Donkey
+Cats <|-- Tiger
+Cats <|-- Leon
+Rodents <|-- Rat
+Rodents <|-- Beaver
+Horses <|-- Horse

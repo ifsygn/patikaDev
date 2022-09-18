@@ -1,0 +1,53 @@
+classDiagram
+direction 
+class Elevator {
+	energySavingMode() bool
+	goDown(floorNumber) int
+	goUp(floorNumber) int
+	capacity : int
+}
+class ElevatorSimulationApp {
+	timer()
+	saveLog()
+}
+class ControlPanel {
+	floorDoor()
+	floorLight()
+	floorRing()
+	floorWaitingTime()
+	capacityOverload()
+}
+class FloorControlPanel {
+	requestGoUp()
+	requestGoDown()
+	directionOfElevator()
+	locationOfElevator()
+	floorNumber
+}
+class ElevatorControlPanel {
+	targetFloorButton()
+	requestOpenDoor()
+	requestCloseDoor()
+	emergencyButton()
+	stopButton()
+	locationOfElevator()
+	energySavingMode()
+}
+class RandomPassengerCreatorApp {
+	 createPassenger()
+	setTime()
+	setDeparture()
+	setArrival()
+}
+class ElevatorProgrammer {
+	getLocationOfElevators()
+	 assignElevatorToRequest()
+	getFloorRequest()
+}
+ 
+ElevatorSimulationApp "1"  --*  "1" RandomPassengerCreatorApp : gets Passengers
+Elevator "1"  --*  "1" ControlPanel : has a
+ControlPanel "1"  --o  "1" ElevatorControlPanel : works with
+ControlPanel "1"  --o  "1" FloorControlPanel : works with
+ElevatorProgrammer "1"  --o  "n" Elevator : controls
+ElevatorSimulationApp "1"  --*  "1" ElevatorProgrammer : has a
