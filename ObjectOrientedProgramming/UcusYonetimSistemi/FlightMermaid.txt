@@ -1,0 +1,30 @@
+classDiagram
+direction TB
+class Airport {
+	name : String
+	airportID : String
+}
+class Airline Company {
+	companyID : String
+	pilotID : String
+	experience(pilot) String
+}
+class Plane {
+	planeID : String
+	numberOfPilotsRequired : String
+	status(planeID) bool
+}
+class Flight {
+	flightID : String
+	departureLocation : String
+	landingLocation : String
+	flightDate : String
+	departureTime : String
+	landingTime : String
+	pilot : String
+	co-pilot : String
+}
+ 
+Airport "1"  --o  "*" Airline Company
+Airline Company "1"  --*  "*" Plane
+Plane "1"  --o  "*" Flight
