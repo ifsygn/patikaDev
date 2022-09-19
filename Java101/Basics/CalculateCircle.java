@@ -15,8 +15,8 @@ public class CalculateCircle {
             if (r < 0)
                 break;
 
-            CalculateCircle.area(r);
-            CalculateCircle.perimeter(r);
+            area(r);
+            perimeter(r);
         }
     }
 
