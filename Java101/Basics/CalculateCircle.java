@@ -30,7 +30,7 @@ public class CalculateCircle {
     public static void perimeter(double r)
     {
         double perimeter = 2 * Math.PI * r;
-        System.out.printf(" Dairenin Alanı:%f%n", perimeter);
+        System.out.printf(" Dairenin Çevresi:%f%n", perimeter);
     }
 }
 
