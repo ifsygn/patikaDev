@@ -24,6 +24,7 @@ public class PassExam {
 
         Scanner sc = new Scanner(System.in);
 
+        JOIN_LOOP:
         for (;;i++) {
 
             System.out.print("Dersin ismini giriniz:");
@@ -35,19 +36,22 @@ public class PassExam {
             System.out.print("Dersin notunu giriniz:");
             lessonPuan = sc.nextInt();
 
+            if (lessonPuan < 0 || lessonPuan > 100)
+                break;
+
             sum += lessonPuan;
         }
+        if (i == 0)
+            System.exit(0);
 
-        int mean = meanPuan(sum,i);
-        System.out.printf("Ortalamanız %d:",mean);
-
-        isPassed(mean);
-
+        isPassed(meanPuan(sum,i));
     }
 
     public static int meanPuan(int sum, int i)
     {
-       return sum / i;
+        int mean = sum / i;
+        System.out.printf("Ortalamanız %d:",mean);
+       return mean;
     }
 
     public static void isPassed(int mean)
