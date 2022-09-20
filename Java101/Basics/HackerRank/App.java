@@ -14,7 +14,7 @@ package Java101.Basics.HackerRank;
 
 import java.util.*;
 
-public class JavaStaticInitializerBlock {
+public class App {
     //Write your code here
 
     public static Scanner sc = new Scanner(System.in);
@@ -22,12 +22,12 @@ public class JavaStaticInitializerBlock {
     public static int H = 2;
     public static boolean flag = false;
 
-    static {
-        System.out.printf("B: %d%n", B);
+     static {
+         System.out.printf("B: %d%n", B);
         System.out.print("Yeni B değerini giriniz: ");
         B = sc.nextInt();
-        System.out.printf("H: %d%n", H);
-        System.out.print("Yeni H değerini giriniz: ");
+         System.out.printf("H: %d%n", H);
+         System.out.print("Yeni H değerini giriniz: ");
         H= sc.nextInt();
         flag = request();
     }

@@ -27,7 +27,8 @@ public class GroceryStore {
             System.out.print(" Patlıcan Kaç Kilo ? ");
             double patlican = Double.parseDouble(kb.nextLine());
 
-            double total = armut*armutPrice + elma*elmaPrice + domates*domatesPrice + muz*muzPrice + patlican*patlicanPrice;
+            double total = armut*armutPrice + elma*elmaPrice + domates*domatesPrice +
+                    muz*muzPrice + patlican*patlicanPrice;
             System.out.printf(" Toplam: %.2f TL %n ", total);
         }
     }
