@@ -23,7 +23,7 @@ Sample Output
 * long
  */
 
-package Java101.Basics.HackerRank;
+package Java101.HackerRank;
 
 import java.util.*;
 

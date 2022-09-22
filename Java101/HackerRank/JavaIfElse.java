@@ -15,7 +15,7 @@ If  is even and greater than 20, print Not Weird
 Complete the stub code provided in your editor to print whether or not n is weird.
 
  */
-package Java101.Basics.HackerRank;
+package Java101.HackerRank;
 
 import java.util.Scanner;
 

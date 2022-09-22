@@ -26,7 +26,7 @@ Sample Output
 
  */
 
-package Java101.Basics.HackerRank;
+package Java101.HackerRank;
 import java.util.*;
 
 public class EndOfFile {
