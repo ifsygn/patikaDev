@@ -73,7 +73,7 @@ public class CalcFlightPriceTicket {
             flightPrice = (1 - 0.3) * flightPrice;
 
         if (flightType == 2)
-            flightPrice = (1 - 0.2) * flightPrice;
+            flightPrice = (1 - 0.2) * flightPrice * 2;
 
         System.out.printf("Toplam Tutar:%.02f TL ", flightPrice);
     }
