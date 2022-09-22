@@ -8,7 +8,7 @@ package Java101.LoopStructures;
 
 import java.util.Scanner;
 
-public class SumOfEvenAndModeFourNumbers {
+public class SumOfValues {
     public static void main(String []args)
     {
         Scanner sc = new Scanner(System.in);

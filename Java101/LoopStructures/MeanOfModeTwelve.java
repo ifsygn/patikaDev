@@ -18,7 +18,7 @@ public class MeanOfModeTwelve {
         int sum = 0;
         int j = -1;
 
-        for (int i = 0; i < limit; i += 12)
+        for (int i = 0; i <= limit; i += 12)
         {
             if (i % 12 == 0) {
                 sum += i;
