@@ -49,6 +49,9 @@ public class CalculatorApp {
                 case 7:
                     mode();
                     break;
+                case 8:
+                    rectangular();
+                    break;
                 case 0:
                     break;
                 default:
@@ -90,19 +93,12 @@ public class CalculatorApp {
     static void times() {
         int number, result = 1, i = 1;
 
-        while (true) {
+        do {
             System.out.print(i++ + ". sayı :");
             number = sc.nextInt();
-
-            if (number == 1)
-                break;
-
-            if (number == 0) {
-                result = 0;
-                break;
-            }
             result *= number;
-        }
+
+        } while (number != 1 && number != 0);
 
         System.out.println("Sonuç : " + result);
     }
@@ -162,5 +158,14 @@ public class CalculatorApp {
         int n = sc.nextInt();
         System.out.println(x % n);
         }
+
+    static void rectangular() {
+        System.out.print("1. Kenar :");
+        int x = sc.nextInt();
+        System.out.print("2. Kenar :");
+        int y = sc.nextInt();
+
+        System.out.println("Alanı : " + x * y + " Çevresi : " + 2 * (x + y));
+    }
 }
 
