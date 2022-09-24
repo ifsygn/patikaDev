@@ -67,7 +67,7 @@ public class Student {
         }
     }
 
-    void calcAvarage(Course course) {
+    void calcAvarageCourse(Course course) {
         double courseAverage = 0.20 * course.verbalNote + 0.80 * course.examNote;
 
         System.out.println(course.name + " dersinin ortalaması: " + courseAverage);

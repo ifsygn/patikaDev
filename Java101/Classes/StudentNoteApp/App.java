@@ -30,7 +30,7 @@ class App {
         Student s2 = new Student("İsmail Furkan Saygın","001","mezun",tarih,fizik,biyo);
         s2.addClassNote(fizik,50,100);
 
-        s2.calcAvarage(fizik);
+        s2.calcAvarageCourse(fizik);
     }
 }
 
