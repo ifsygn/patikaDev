@@ -175,6 +175,19 @@ public class ArrayUtil {
         return rdArray;
     }
 
+    //Belirlenen satır ve sütun sayısına göre 0-10 arasında sayılardan oluşan random dizi üretir.
+    static int[][] randomMatrix(int m, int n) {
+
+        int [][] rdArray = new int[m][n];
+
+        for (int i = 0; i < rdArray.length; i++) {
+            for(int j = 0; j < rdArray[0].length; j++){
+                rdArray[i][j] = (int) ((Math.random()) * 10);
+            }
+        }
+        return rdArray;
+    }
+
     //Diziden bir sayıyı silen program
     static int[] removeNumbers(int[] array, int number) {
 
@@ -253,7 +266,7 @@ public class ArrayUtil {
                     b.append(']');
                 else b.append(", ");
             }
-                b.append("\n");
+            b.append("\n");
         }
         return b.toString();
     }
@@ -273,5 +286,19 @@ public class ArrayUtil {
                 return b.append(']').toString();
             b.append(", ");
         }
+    }
+
+    static int[][] transpoze(int[][] matrix) {
+
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int [][] result = new int[n][m];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                result[i][j] = matrix[j][i];
+            }
+        }
+        return result;
     }
 }
