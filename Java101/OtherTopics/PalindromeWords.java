@@ -9,7 +9,14 @@
  */
 package Java101.OtherTopics;
 
+import java.util.Scanner;
+
 public class PalindromeWords {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+    }
 
     static boolean isPalindrome(String str) {
         int i = 0, j = str.length() - 1;
@@ -28,9 +35,5 @@ public class PalindromeWords {
             reverse += str.charAt(i);
         }
         return str.equals(reverse);
-    }
-
-    public static void main(String[] args) {
-        System.out.println(isPalindrome("abba"));
     }
 }

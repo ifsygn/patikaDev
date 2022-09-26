@@ -21,33 +21,38 @@ public class NumberEstimationGame {
         System.out.print("Kaç kez denemek istiyorsunuz: ");
         int chance = sc.nextInt();
         int selected = 0;
+        int[] wrong = new int[chance];
+        int count = 0;
 
-        while (chance > 0) {
-            System.out.println("Lütfen tahmininizi giriniz: ");
+        while (true) {
+            System.out.print("Lütfen tahmininizi giriniz: ");
             selected = sc.nextInt();
-
             if (selected < 0 || selected > 99) {
                 System.out.println("Lütfen 0-100 arasında bir değer giriniz.");
+                continue;
             }
-
             if (selected == number) {
                 System.out.println("Tebrikler, doğru tahmin ! Tahmin ettiğiniz sayı: " + number);
                 break;
             } else {
                 System.out.println("Tahmininiz  yanlış !");
-                System.out.println("----------------------------------------");
                 if (selected > number)
                     System.out.println(selected + " sayısı, gizli sayıdan büyüktür.");
                 else
                     System.out.println(selected + " sayısı, gizli sayıdan küçüktür.");
-                if (chance != 0) {
-                    System.out.println("Kalan hakkı : " + (--chance));
+
+                if (--chance > 0) {
+                    wrong[count++] = selected;
+                    System.out.println("Kalan hakkı : " + chance);
+                    System.out.println("----------------------------------------");
                 } else {
-                    System.out.println("Hakkınız kalmadı");
+                    wrong[count++] = selected;
+                    System.out.println("Hakkınız kalmadı\n" +
+                            "Tahmin edilmeye çalışılan sayı: " + number);
                     break;
                 }
             }
         }
-        System.out.println(number);
+        System.out.println(Arrays.toString(wrong));
     }
 }
