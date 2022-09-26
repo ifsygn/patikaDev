@@ -18,11 +18,10 @@ public class MineSweeperGame {
         String size;
         MineMap map;
 
-        System.out.print("Hangi tür mayın tarlası oynamak istersiniz?\n" +
-                "Klasik / Özel: ");
-        String gameType = sc.nextLine();
-
         while (true){
+            System.out.print("Hangi tür mayın tarlası oynamak istersiniz?\n" +
+                    "Klasik / Özel: ");
+            String gameType = sc.nextLine();
             if (gameType.equals("Özel")) {
 
                 System.out.print("Width: ");
@@ -83,6 +82,10 @@ public class MineSweeperGame {
             System.out.println("\n===================");
 
             map.select(x,y);
+            if (map.safePoints == 0) {
+                System.out.println("BRAVoOoOoO\nKAZANDINIZ!");
+                break;
+            }
         }
     }
 }
@@ -92,6 +95,8 @@ class MineMap {
     double percentage;
     String[][] mineMatrix;
     String[][] shadowedMatrix;
+    int numberOfMines;
+    int safePoints;
 
     MineMap(int width, int height, double percentage) {
         mineMatrix = new String[width][height];
@@ -153,7 +158,9 @@ class MineMap {
             }
         }
 
-        int numberOfMines = (int) Math.floor(width * height * percentage);
+        this.numberOfMines = (int) Math.floor(width * height * percentage);
+        System.out.println("numberOfMines: " + numberOfMines);
+        this.safePoints = width * height - numberOfMines;
 
         for (int count = 0; count <= numberOfMines;) {
             int i =  (int)(Math.random() * (mineMatrix.length));
@@ -184,6 +191,8 @@ class MineMap {
     public void select(int x, int y) {
 
         if (isSafe(x,y)) {
+            safePoints--;
+            System.out.println("safePoints: " + safePoints);
             countMines(x,y);
             printMatrix(shadowedMatrix);
         } else {
