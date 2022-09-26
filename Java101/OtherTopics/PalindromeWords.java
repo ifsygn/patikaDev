@@ -15,7 +15,13 @@ public class PalindromeWords {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        System.out.print("Bir yazı yazınız: ");
         String str = sc.nextLine();
+
+        if (isPalindrome(str))
+            System.out.println(str + " palindromdur");
+        else
+            System.out.println(str + " palindrom değildir");
     }
 
     static boolean isPalindrome(String str) {

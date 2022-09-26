@@ -82,6 +82,7 @@ public class MineSweeperGame {
             System.out.println("\n===================");
 
             map.select(x,y);
+            if (!map.isSafe(x,y)) break;
             if (map.safePoints == 0) {
                 System.out.println("BRAVoOoOoO\nKAZANDINIZ!");
                 break;
@@ -92,7 +93,6 @@ public class MineSweeperGame {
 
 class MineMap {
 
-    double percentage;
     String[][] mineMatrix;
     String[][] shadowedMatrix;
     int numberOfMines;
