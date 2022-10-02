@@ -52,17 +52,6 @@ public class ArrayUtil {
         System.out.println("Minimum değer: " + min + "Maximum değer: " + max);
     }
 
-    //Dizideki sayıların harmonik ortalamasını hesaplayan program
-    static double harmonicArrayAvarage(int[] array)
-    {
-        int sum = 0;
-
-        for (int i = 0; i < array.length; i++) {
-            sum += 1.0 / array[i];
-        }
-        return (double) array.length / sum;
-    }
-
     //Dizide tekrarlayan sayıları tutan dizi
     static void findDuplicate(int [] array) {
 
@@ -123,21 +112,20 @@ public class ArrayUtil {
         System.out.println(Arrays.toString(frequency));
     }
 
-    //Dizide elemanların kaç kez tekrar edildiğini ekrana basar.
-    static void printFrequency(int [] array) {
+    //Dizideki sayıların harmonik ortalamasını hesaplayan program
+    static double harmonicArrayAvarage(int[] array)
+    {
+        int sum = 0;
 
         for (int i = 0; i < array.length; i++) {
-            int count = 1;
-            for (int j = 0; j < array.length; j++) {
-                if ((i != j) && (array[i] == array[j])) {
-                    count++;
-                }
-            }
-            if (ArrayUtil.isFindBefore(array, i))
-                continue;
-            System.out.printf("%d sayısı %d kere tekrar edildi.%n", array[i], count);
+            sum += 1.0 / array[i];
         }
+        return (double) array.length / sum;
     }
+
+
+
+
 
     static boolean isEven (int val) {
         if (val % 2 == 0) {
@@ -162,6 +150,68 @@ public class ArrayUtil {
                 return true;
         }
         return false;
+    }
+
+    //Dizide elemanların kaç kez tekrar edildiğini ekrana basar.
+    static void printFrequency(int [] array) {
+
+        for (int i = 0; i < array.length; i++) {
+            int count = 1;
+            for (int j = 0; j < array.length; j++) {
+                if ((i != j) && (array[i] == array[j])) {
+                    count++;
+                }
+            }
+            if (ArrayUtil.isFindBefore(array, i))
+                continue;
+            System.out.printf("%d sayısı %d kere tekrar edildi.%n", array[i], count);
+        }
+    }
+
+    public static void printMatrix(int[][] matrix) {
+        if (matrix == null)
+            System.out.print("null");
+        int iMax = matrix.length - 1;
+        if (iMax == -1)
+            System.out.print("[]");
+
+        int jMax = matrix[0].length - 1;
+        if (jMax == -1)
+            System.out.print("[]");
+
+        for (int i = 0; i < matrix.length; i++){
+            System.out.print('[');
+            for (int j = 0; j < matrix[i].length ; j++) {
+                System.out.print((matrix[i][j]));
+                if (j == jMax)
+                    System.out.print(']');
+                else System.out.print(", ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void printMatrix(String[][] matrix) {
+        if (matrix == null)
+            System.out.print("null");
+        int iMax = matrix.length - 1;
+        if (iMax == -1)
+            System.out.print("[]");
+
+        int jMax = matrix[0].length - 1;
+        if (jMax == -1)
+            System.out.print("[]");
+
+        for (int i = 0; i < matrix.length; i++){
+            System.out.print('[');
+            for (int j = 0; j < matrix[i].length ; j++) {
+                System.out.print((matrix[i][j]));
+                if (j == jMax)
+                    System.out.print(']');
+                else System.out.print(", ");
+            }
+            System.out.println();
+        }
     }
 
     //Belirli bir uzunluğa göre 0-10 arasında sayılardan oluşan random dizi üretir.
@@ -220,52 +270,6 @@ public class ArrayUtil {
             }
         }
         return array;
-    }
-
-    public static void printMatrix(int[][] matrix) {
-        if (matrix == null)
-            System.out.print("null");
-        int iMax = matrix.length - 1;
-        if (iMax == -1)
-            System.out.print("[]");
-
-        int jMax = matrix[0].length - 1;
-        if (jMax == -1)
-            System.out.print("[]");
-
-        for (int i = 0; i < matrix.length; i++){
-            System.out.print('[');
-            for (int j = 0; j < matrix[i].length ; j++) {
-                System.out.print((matrix[i][j]));
-                if (j == jMax)
-                    System.out.print(']');
-                else System.out.print(", ");
-            }
-            System.out.println();
-        }
-    }
-
-    public static void printMatrix(String[][] matrix) {
-        if (matrix == null)
-            System.out.print("null");
-        int iMax = matrix.length - 1;
-        if (iMax == -1)
-            System.out.print("[]");
-
-        int jMax = matrix[0].length - 1;
-        if (jMax == -1)
-            System.out.print("[]");
-
-        for (int i = 0; i < matrix.length; i++){
-            System.out.print('[');
-            for (int j = 0; j < matrix[i].length ; j++) {
-                System.out.print((matrix[i][j]));
-                if (j == jMax)
-                    System.out.print(']');
-                else System.out.print(", ");
-            }
-            System.out.println();
-        }
     }
 
     public static String toString(int[][] matrix) {
