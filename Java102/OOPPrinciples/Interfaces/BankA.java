@@ -11,6 +11,13 @@ public class BankA {
         this.password = password;
     }
 
+    public void connect() {
+        System.out.println(this.bankName + " Bağlanıldı !");
+    }
+
+    public void sendCardInfo(String cardNumber, String expiryDate, String CVC) {
+        System.out.println("İşlem başarılı oldu.");
+    }
     public String getBankName() {
         return bankName;
     }
