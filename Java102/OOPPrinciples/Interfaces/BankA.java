@@ -5,7 +5,7 @@ public class BankA {
     private String terminalID;
     private String password;
 
-    private BankA(String bankName, String terminalID, String password) {
+    BankA(String bankName, String terminalID, String password) {
         this.bankName = bankName;
         this.terminalID = terminalID;
         this.password = password;
@@ -15,9 +15,13 @@ public class BankA {
         System.out.println(this.bankName + " Bağlanıldı !");
     }
 
-    public void sendCardInfo(String cardNumber, String expiryDate, String CVC) {
+
+    public void payment(double price, String cardNumber, String expiryDate, String CVC) {
+        //Banka Ödeme İşlemleri:
+        System.out.println("Bankadan cevap bekleniyor...");
         System.out.println("İşlem başarılı oldu.");
     }
+
     public String getBankName() {
         return bankName;
     }

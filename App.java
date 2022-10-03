@@ -20,7 +20,7 @@ public class App {
                 result[i] = upperResult[i];
             }
 
-            else if(temp.equals(" ")) {
+            else if(temp.equals(" ") && i != str.length() - 1) {
                 result[i + 1] = upperResult[i + 1];
             }
 

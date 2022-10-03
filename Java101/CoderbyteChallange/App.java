@@ -3,7 +3,7 @@ package Java101.CoderbyteChallange;
 import java.util.*;
 
 public class App {
-    public static String LetterCapitalize(String str) {
+    public static String letterCapitalize(String str) {
         // code goes here
 
         char [] result = str.toCharArray();
@@ -30,6 +30,6 @@ public class App {
     public static void main (String[] args) {
         // keep this function call here
         Scanner s = new Scanner(System.in);
-        System.out.print(LetterCapitalize(s.nextLine()));
+        System.out.print(letterCapitalize(s.nextLine()));
     }//end of main
 }//end of// class
