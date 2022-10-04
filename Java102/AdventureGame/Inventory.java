@@ -5,7 +5,7 @@ public class Inventory {
     public boolean food;
     public boolean firewoord;
     public String weaponName;
-    public String armorName;
     public int weaponDamage;
+    public String armorName;
     public int armorDefence;
 }

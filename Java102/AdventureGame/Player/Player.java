@@ -8,9 +8,14 @@ public abstract class Player {
     public Inventory inventory;
     private String ID;
     private int damage;
+    private int startHealth;
     private int health;
     private String name;
     private int money;
+
+    Player() {
+        inventory = new Inventory();
+    }
 
     public Inventory getInventory() {
         return inventory;
@@ -33,7 +38,7 @@ public abstract class Player {
     }
 
     public void setDamage(int damage) {
-        this.damage = damage;
+        this.damage = damage + inventory.weaponDamage;
     }
 
     public int getHealth() {
@@ -42,6 +47,14 @@ public abstract class Player {
 
     public void setHealth(int health) {
         this.health = health;
+    }
+
+    public int getStartHealth() {
+        return this.startHealth;
+    }
+
+    protected void setStartHealth(int health) {
+        this.startHealth = health;
     }
 
     public String getName() {
@@ -66,22 +79,22 @@ public abstract class Player {
 
     //Player Obstacle ile savaşır, damage ve health ile kazanan belli olur.
     public void combat(Obstacle obstacle) {
-        System.out.println(this.name + " ile " + obstacle.getName() + " karşı karşıya!");
+        System.out.println(this.getName() + " ile " + obstacle.getName() + " karşı karşıya!");
 
-        while (this.getHealth() != 0 || obstacle.getHealth() != 0) {
+        while (this.getHealth() > 0 && obstacle.getHealth() > 0) {
 
-            obstacle.setDamage(-this.getDamage());
+            obstacle.setHealth(obstacle.getHealth() - this.getDamage());
             System.out.println(this.getName() + " " + obstacle.getName() + " canavarına saldırdı.\n" +
-                    this.damage + "hasar verdi.\n" + "Canavarın canı " + obstacle.getHealth() + " kaldı.");
+                    this.getDamage() + " hasar verdi.\n" + "Canavarın canı " + obstacle.getHealth() + " kaldı.");
 
-            if (obstacle.getHealth() == 0) {
-                System.out.println("Savaşı " + this.name + " kazandı.");
+            if (obstacle.getHealth() <= 0) {
+                System.out.println("Savaşı " + this.getName() + " kazandı.");
                 break;
             }
 
-            this.setHealth(obstacle.getDamage());
-            System.out.println(this.getName() + " " + obstacle.getName() + " oyuncusuna saldırdı.\n" +
-                    this.damage + "hasar verdi.\n" + "Canavarın canı " + obstacle.getHealth() + " kaldı.");
+            this.setHealth(this.getHealth() - obstacle.getDamage());
+            System.out.println(obstacle.getName() + " " + this.getName() + " oyuncusuna saldırdı.\n" +
+                    obstacle.getDamage() + " hasar verdi.\n" + "Oyuncunun canı " + this.getHealth() + " kaldı.");
         }
     }
 

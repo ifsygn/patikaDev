@@ -6,6 +6,7 @@ public class Archer extends Player {
         setName("Archer");
         setID("P2");
         setDamage(7);
+        setStartHealth(18);
         setHealth(18);
         setMoney(20);
 

@@ -34,6 +34,12 @@ public class Game {
 
     public static void start() {
 
+        ToolStore toolStore = new ToolStore(player);
+        SafeHouse safeHouse = new SafeHouse(player);
+        Forest forest = new Forest(player);
+        Cave cave = new Cave(player);
+        River river = new River(player);
+
         int select;
 
         for (;;) {
@@ -41,39 +47,38 @@ public class Game {
             LOCATION_LOOP:
             for (;;){
 
-                System.out.print("Nereye gitmek istersiniz? \n" +
+                System.out.print("------------------------------\n" +
+                        "Nereye gitmek istersiniz? \n" +
                         "1. ToolStore\n" +
                         "2. SafeHouse\n" +
-                        "1. Forest\n" +
-                        "2. Cave\n" +
-                        "2. River\n" +
+                        "3. Forest\n" +
+                        "4. Cave\n" +
+                        "5. River\n" +
                         "?:");
 
                 select = sc.nextInt();
-                A:
+
                 switch (select) {
-                    case 1:
-                        location = new ToolStore(player);
 
+                    case 1: toolStore.onLocation(player);
                         break LOCATION_LOOP;
 
-                    case 2:
+                    case 2: safeHouse.onLocation(player);
                         break LOCATION_LOOP;
 
-                    case 3:
+                    case 3: forest.onLocation(player);
                         break LOCATION_LOOP;
 
-                    case 4:
+                    case 4: cave.onLocation(player);
                         break LOCATION_LOOP;
 
-                    case 5:
+                    case 5: river.onLocation(player);
                         break LOCATION_LOOP;
 
                     default:
                         System.out.println("Yanlış giriş yaptınız. Lütfen tekrar deneyiniz.");
                 }
             }
-
 
             if (player.getHealth() == 0)
                 break;

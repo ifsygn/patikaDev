@@ -6,6 +6,7 @@ public class Knight extends Player {
         setName("Knight");
         setID("P3");
         setDamage(8);
+        setStartHealth(24);
         setHealth(24);
         setMoney(5);
 

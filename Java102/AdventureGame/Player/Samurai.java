@@ -6,6 +6,7 @@ public class Samurai extends Player {
         setName("Samurai");
         setID("P1");
         setDamage(5);
+        setStartHealth(21);
         setHealth(21);
         setMoney(15);
 
