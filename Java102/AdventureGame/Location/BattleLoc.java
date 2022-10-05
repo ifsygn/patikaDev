@@ -4,17 +4,12 @@ import Java102.AdventureGame.Obstacle.Obstacle;
 import Java102.AdventureGame.Player.Player;
 import java.util.Random;
 
-
 abstract class BattleLoc extends Location {
     static Random random = new Random();
     public Obstacle obstacle;
     public Player player;
 
     BattleLoc() {
-
-    }
-
-    BattleLoc(Obstacle o) {
 
     }
 

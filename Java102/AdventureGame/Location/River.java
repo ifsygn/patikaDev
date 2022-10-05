@@ -7,11 +7,6 @@ import java.util.Scanner;
 
 public class River extends BattleLoc {
 
-
-    River() {
-
-    }
-
     public River(Player player) {
         super();
     }
@@ -21,6 +16,16 @@ public class River extends BattleLoc {
         System.out.println("You are in the River.");
         Bear bear = new Bear();
         obstacle = bear;
+
+        int min = 1;
+        int max = 4;
+        int numberOfObstacle = random.nextInt(max - min) + min; //[min, max)
+
+        System.out.printf("Karşında %d tane %s var.",numberOfObstacle,obstacle.getName());
+        obstacle = bear;
+        obstacle.setDamage(obstacle.getDamage() * numberOfObstacle);
+        obstacle.setHealth(obstacle.getHealth() * numberOfObstacle);
+        obstacle.setMoney(obstacle.getMoney() * numberOfObstacle);
 
         System.out.println("Do you want to combat with " + obstacle.getName());
         if (sc.nextBoolean())

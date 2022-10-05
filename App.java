@@ -1,37 +1,18 @@
-/*
-    ATM Projesi
- */
-
 import java.util.*;
 
 public class App {
-    public static String LetterCapitalize(String str) {
-        // code goes here
-
-        char [] result = str.toCharArray();
-        char [] upperResult = (str.toUpperCase()).toCharArray();
-
-        StringBuilder answer = new StringBuilder();
-
-        for (int i = 0; i < str.length(); i++) {
-
-            String temp = result[i] + "";
-            if (i == 0) {
-                result[i] = upperResult[i];
-            }
-
-            else if(temp.equals(" ") && i != str.length() - 1) {
-                result[i + 1] = upperResult[i + 1];
-            }
-
-            answer.append(result[i]);
+    public static void main(String[] args)
+    {
+        String s = "a/b/c/d";
+        String[] a1 = s.split("/");
+        System.out.println("split string using only regex:");
+        for (String string : a1) {
+            System.out.println(string);
         }
-        return answer.toString();
-    }
-
-    public static void main (String[] args) {
-        // keep this function call here
-        Scanner s = new Scanner(System.in);
-        System.out.print(LetterCapitalize(s.nextLine()));
+        System.out.println("split string using regex with limit:");
+        String[] a2 = s.split("/", 6);
+        for (String string : a2) {
+            System.out.println(string);
+        }
     }//end of main
 }//end of// class
