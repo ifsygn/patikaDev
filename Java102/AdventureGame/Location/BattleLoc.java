@@ -23,4 +23,3 @@ abstract class BattleLoc extends Location {
         player.combat(obstacle);
     }
 }
-

@@ -1,6 +1,7 @@
 package Java102.AdventureGame.Obstacle;
 
 public class Zombie extends Obstacle {
+
     public Zombie() {
         setName("Zombie");
         setID("O1");

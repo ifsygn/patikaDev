@@ -7,10 +7,6 @@ public class Obstacle {
     private String name;
     private int money;
 
-    Obstacle() {
-
-    }
-
     //Kaç tane canavarın yaratıldığını hesaplar.
     public int obstacleNumber() {
 
