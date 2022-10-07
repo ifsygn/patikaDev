@@ -74,27 +74,26 @@ public class Employee {
     double raiseSalary() {
         if (this.hireYear < 10)
             return salary * 0.05;
-        else if (this.hireYear > 9 && this.hireYear < 20)
+        else if (this.hireYear < 20)
             return salary * 0.10;
         else
             return salary * 0.15;
     }
 
     double totalSalary() {
-        return salary + raiseSalary();
+        return salary + raiseSalary() + bonus() - tax();
      }
 
 
     public String toString() {
-        System.out.println(this.name);
-        System.out.println(this.salary + " TL");
-        System.out.println(this.workHours + " saat");
-        System.out.println(this.hireYear);
-        System.out.println(this.tax() + " TL");
-        System.out.println(this.bonus() + " TL");
-        System.out.println(this.raiseSalary() + " TL");
-        System.out.println("Vergi ve Bonuslar ile birlikte maaş : " + (this.salary - tax() + bonus()) + " TL");
-        System.out.println(this.totalSalary() + " TL");
+        System.out.println("Çalışan adı : " + this.name);
+        System.out.println("Maaş : " + this.salary + " TL");
+        System.out.println("Çalışma Süresi : " + this.workHours + " saat");
+        System.out.println("İşe Başlangıç Yılı : " + this.hireYear);
+        System.out.println("Vergi : " + this.tax() + " TL");
+        System.out.println("Bonus : " + this.bonus() + " TL");
+        System.out.println("Maaş Artışı : " + this.raiseSalary() + " TL");
+        System.out.println("Toplam Maaş : " + this.totalSalary() + " TL");
         return null;
     }
 }
