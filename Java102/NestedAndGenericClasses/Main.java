@@ -1,4 +1,4 @@
-package Java102.Nested;
+package Java102.NestedAndGenericClasses;
 
 public class Main {
     public static void main(String[] args) {

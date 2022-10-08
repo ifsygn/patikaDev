@@ -1,4 +1,4 @@
-package Java102.Nested;
+package Java102.NestedAndGenericClasses;
 
 public class Out{
 
