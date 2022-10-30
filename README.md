@@ -5,3 +5,6 @@ Patika.dev derslerine ait proje ve ödevler.
 - Object Oriented Programming
 - Java 101
 - Java 102
+
+
+Patika profilim: https://app.patika.dev/ifsygn
